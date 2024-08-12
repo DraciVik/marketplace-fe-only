@@ -108,8 +108,8 @@ export default function ProductGrid({ products }: ProductGridProps) {
                 <Link href={`/product/${product.id}`} passHref>
                   <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <CardMedia
-                      sx={{ position: 'relative', height: 0, paddingTop: '100%' }} // 1:1 Aspect Ratio
-                    >
+                      sx={{ position: 'relative', height: 0, paddingTop: '100%' }}
+                      >
                       <Image
                         src={product.image}
                         alt={product.title}
