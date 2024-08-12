@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Marketplace Frontend
+
+This is a Next.js-based project for a marketplace frontend. The project includes features such as product listing, search, filtering, and a basic shopping cart system.
+
+## Prerequisites
+
+Before running the project, make sure you have the following installed:
+
+- **Node.js**: Version 18.x.x or higher
+- **npm**: Version 8.x.x or higher
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to run the project locally:
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine:
+
+```bash
+git clone <repository-url>
+cd marketplace-fe-only
+```
+
+### 2. Install Dependencies
+Install the necessary dependencies using npm:
+
+```bash
+npm install
+```
+
+### 3. Run the Development Server
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+This will start the application in development mode. Open your browser and navigate to http://localhost:3000 to see the application.
+
+### 4. Build the Application for Production
+To build the application for production, run:
+
+```bash
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Start the Production Server
+After building the application, you can start the production server using:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This will start the application in production mode on http://localhost:3000.
 
-## Learn More
+## Assumptions Made
+* Node.js Environment: It is assumed that Node.js is installed.
+* Environment Variables: No specific environment variables are required for running this project in current form.
+* Material-UI: Material-UI is used for styling components and ensuring a consistent design throughout the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Issues
+If you encounter any issues, make sure to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* Check that all dependencies are installed correctly (npm install).
+* Ensure that the correct version of Node.js and npm is being used.
+* Verify that no other process is using port 3000 on your machine.

@@ -1,13 +1,11 @@
-import ProductGrid from './ProductGrid';
+import ProductDetail from './ProductDetail';
 
-export const revalidate = 60;
-
-async function fetchProducts() {
+async function fetchProduct(id: string) {
   try {
-    const res = await fetch('https://fakestoreapi.com/products');
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`);
 
     if (!res.ok) {
-      let errorMessage = `Failed to fetch products. Status: ${res.status}`;
+      let errorMessage = `Failed to fetch product with ID: ${id}. Status: ${res.status}`;
 
       switch (res.status) {
         case 404:
@@ -26,18 +24,18 @@ async function fetchProducts() {
 
     return await res.json();
   } catch (error) {
-    console.error('Error fetching products:', error);
+    console.error(`Error fetching product with ID: ${id}`, error);
 
     throw error;
   }
 }
 
-export default async function HomePage() {
-  const products = await fetchProducts();
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const product = await fetchProduct(params.id);
 
   return (
     <div className="container mx-auto px-4">
-      <ProductGrid products={products} />
+      <ProductDetail product={product} />
     </div>
   );
 }
